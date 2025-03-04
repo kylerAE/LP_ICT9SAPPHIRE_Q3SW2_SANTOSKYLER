@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math with Pikachu</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <style>
+        /* Background Image (Outer Area) */
+        body {
+            background-image: url('every-legendary-pokemon-651dl7pr5nrs7bgu.jpg'); /* Replace with your image */
+            background-size: cover;
+            background-position: center;
+            color: black;
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+
+        /* White Container for Content */
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            margin-top: 20px;
+            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3); /* Adds a subtle shadow */
+        }
+
+        /* Pikachu Image */
+        .pikachu {
+            width: 200px;
+            height: auto;
+        }
+ 
+        /* Button Styling */
+        .btn {
+            margin: 5px;
+            font-size: 18px;
+        }
+
+        /* Input Styling */
+        input {
+            margin-bottom: 10px;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Hi! My name is Pikachu! ⚡</h1>
+        <img src="dh1ar3f-01e9c97d-1657-4f8e-9f13-18ef7555c210.jpg" alt="Pikachu" class="pikachu"> <!-- Replace with Pikachu image URL -->
+
+        <p>I will ask you some math questions! Enter two numbers below:</p>
+
+        <form onsubmit="return false;">
+            <label>Enter the 1st number:</label>
+            <input type="number" id="numA" class="form-control" placeholder="Type here..." required>
+            
+            <label>Enter the 2nd number:</label>
+            <input type="number" id="numB" class="form-control" placeholder="Type here..." required>
+
+            <br>
+
+            <!-- Buttons for Math Operations -->
+            <button type="button" class="btn btn-warning" onclick="multiply()">Multiply A × B</button>
+            <button type="button" class="btn btn-danger" onclick="remainder()">Get Remainder</button>
+            <button type="button" class="btn btn-success" onclick="exponent()">A^B</button>
+            <button type="button" class="btn btn-info" onclick="checkEqual()">Check if A = B</button>
+        </form>
+
+        <h2 id="result">Answer will appear here!</h2>
+    </div>
+
+    <script>
+        // Function to multiply numbers
+        function multiply() {
+            let a = Number(document.getElementById("numA").value);
+            let b = Number(document.getElementById("numB").value);
+            let product = a * b;
+            document.getElementById('result').innerHTML = 'The product of A and B is: ' + product;
+        }
+
+        // Function to get remainder
+        function remainder() {
+            let a = Number(document.getElementById("numA").value);
+            let b = Number(document.getElementById("numB").value);
+            let rem = a % b;
+            document.getElementById('result').innerHTML = 'The remainder of A ÷ B is: ' + rem;
+        }
+
+        // Function to calculate A^B
+        function exponent() {
+            let a = Number(document.getElementById("numA").value);
+            let b = Number(document.getElementById("numB").value);
+            let power = Math.pow(a, b);
+            document.getElementById('result').innerHTML = 'A raised to B (A^B) is: ' + power;
+        }
+
+        // Function to check if numbers are equal
+        function checkEqual() {
+            let a = Number(document.getElementById("numA").value);
+            let b = Number(document.getElementById("numB").value);
+            let isEqual = (a === b) ? "Yes! A and B are equal." : "No, A and B are not equal.";
+            document.getElementById('result').innerHTML = isEqual;
+        }
+    </script>
+
+</body>
+</html>
